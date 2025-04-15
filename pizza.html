@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class=" dark:bg-gray-100 dark:text-gray-800">
+        <div class="container flex justify-between h-16 mx-auto">
+            <ul class="items-stretch hidden space-x-3 lg:flex">
+                <li class="flex">
+                    <a rel="noopener noreferrer" href="#"
+                        class="flex items-center px-4 -mb-1 text-[24px] font-bold ">Restoranlar</a>
+                </li>
+                <li class="flex">
+                    <a rel="noopener noreferrer" href="#"
+                        class="flex items-center px-4 -mb-1 text-[24px] font-bold">PapaBonus</a>
+                </li>
+            </ul>
+            <div class="items-center flex-shrink-0 hidden lg:flex">
+                <button class="self-center px-8 py-3 rounded font-semibold cursor-pointer">Giriş</button>
+                <button
+                    class="self-center px-8 py-3 font-semibold rounded bg-red-700 dark:text-gray-50 cursor-pointer">Qeydiyyat</button>
+            </div>
+            <button class="p-4 lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6 dark:text-gray-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="bg-red-700">
+            <div class="container flex justify-between h-20 mx-auto md:justify-center md:space-x-8 ">
+                <div>
+                    <img class="w-[120px] h-[51px]" src="images/pj_logo_web_new.png" alt="">
+                </div>
+                <ul class="items-stretch hidden space-x-3 md:flex">
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="index.html"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Kampaniyalar</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="papadies.html"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Papadies</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="pizza.html"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Pizza</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Qəlyanaltılar</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Salat</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Pasta</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Souslar</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">İçki</a>
+                    </li>
+                    <li class="flex">
+                        <a rel="noopener noreferrer" href="#"
+                            class="flex items-center px-4 -mb-1 text-white font-semibold">Desertlər</a>
+                    </li>
+                </ul>
+                <button title="Button" type="button" class="p-4 md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 dark:text-gray-800">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container flex justify-between h-20 mx-auto md:justify-center md:space-x-8 p-5">
+        <h3 class="text-[24px] font-semibold">Promo kodunuz var? <span>Endirimdən istifadə edin!</span></h3>
+        <div class="inp-code">
+            <input type="text" class="promo-input" placeholder="Promo kodu daxil edin">
+            <button class=" promo-button cursor-pointer">OK</button>
+        </div>
+    </div>
+    <div class="contayner mx-auto">
+        <div id="pizzas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 custom-cols"></div>
+    </div>
+
+    <script src="js/script.js" type="module"></script>
+   
+       <div id="inputs" class="w-[60%] sm:w-[50%] md:w-[40%] lg:w-[30%] mx-auto rounded-[10px] p-6 my-6 bg-gray-200 flex flex-col gap-5">
+        <h1 class="text-center text-black text-2xl sm:text-3xl font-semibold">Create Pizza</h1>
+        <input class="border p-3 rounded-[10px] bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-indigo-500" placeholder="Image URL" type="text">
+        <input class="border p-3 rounded-[10px] bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-indigo-500" placeholder="Category" type="text">
+        <input class="border p-3 rounded-[10px] bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-indigo-500" placeholder="Name" type="text">
+        <input class="border p-3 rounded-[10px] bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-indigo-500" placeholder="Composition" type="text">
+        <input class="border p-3 rounded-[10px] bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-indigo-500" placeholder="Price" type="number">
+    
+        <button onclick="handlePost()" class="w-full p-3 rounded-[10px] bg-green-700 text-white font-semibold hover:bg-green-800 transition-all duration-300">Post Pizza</button>
+        <button onclick="handleEdit()" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit Pizza</button>
+    </div>
+    <footer class="px-4 py-8 text-white bg-red-700">
+        <div class="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
+            <div class="flex flex-row pr-3 space-x-4 sm:space-x-8">
+                <ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
+                    <li>
+                        <a rel="noopener noreferrer" href="#">© PJA 2024</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
+                <li>
+                    <a rel="noopener noreferrer" href="#">Haqqımızda</a>
+                </li>
+                <li>
+                    <a rel="noopener noreferrer" href="#">Sual və Cavab</a>
+                </li>
+                <li>
+                    <a rel="noopener noreferrer" href="#">Karyera</a>
+                </li>
+                <li>
+                    <a rel="noopener noreferrer" href="#">Xəmir</a>
+                </li>
+                <li>
+                    <a rel="noopener noreferrer" href="#">Papa Talk - Şərtlər və Qaydalar</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

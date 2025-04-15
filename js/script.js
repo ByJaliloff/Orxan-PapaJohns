@@ -153,7 +153,7 @@ window.showInps = function (id) {
       console.log("Element tapılmadı!")
     }
     window.scrollTo({
-        top: document.body.scrollHeight,
+        top: document.body.scrollHeight, 
         behavior: 'smooth'
     })
   }

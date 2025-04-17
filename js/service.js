@@ -1,4 +1,4 @@
-import { PAPADIAS_URL, PIZZA_URL } from "./config.js";
+import { DESERT_URL, PAPADIAS_URL, PIZZA_URL } from "./config.js";
 
   const getAllPizzas = async () => {
     try {
@@ -45,6 +45,36 @@ import { PAPADIAS_URL, PIZZA_URL } from "./config.js";
   const getPapadiaByID = async (id) => {
     try {
         const res = await fetch(`${PAPADIAS_URL.GET}/${id}`)
+        if(!res.ok) {
+            throw new Error(`request xetasi: xeta bas verdi,status: ${res.status}`)
+        }
+        const data = await res.json()
+        return data 
+
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+  }
+
+  const getAllDesert = async () => {
+    try {
+        const res = await fetch(DESERT_URL.GET)
+        if(!res.ok) {
+            throw new Error(`request xetasi: xeta bas verdi,status: ${res.status}`)
+        }
+        const data = await res.json()
+        return data 
+
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+  }
+
+  const getDesertByID = async (id) => {
+    try {
+        const res = await fetch(`${DESERT_URL.GET}/${id}`)
         if(!res.ok) {
             throw new Error(`request xetasi: xeta bas verdi,status: ${res.status}`)
         }
@@ -117,5 +147,7 @@ import { PAPADIAS_URL, PIZZA_URL } from "./config.js";
     getPapadiaByID,
     postNewPizza,
     deletePizzaByID,
-    editPizza
+    editPizza,
+    getAllDesert,
+    getDesertByID
   }

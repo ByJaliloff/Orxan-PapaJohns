@@ -1,9 +1,10 @@
-import { getAllPizzas, getAllPapadias, postNewPizza, deletePizzaByID, editPizza } from "./service.js";
+import { getAllPizzas, getAllPapadias, postNewPizza, deletePizzaByID, editPizza, getAllDesert } from "./service.js";
 
 const inputs = document.querySelectorAll('#inputs input')
 
 let data =[]
 let diasData =[]
+let desData = []
  async function getPizzs() {
     data = await getAllPizzas()
     console.log(data);
@@ -52,6 +53,30 @@ function printPapadias() {
     </div>
     </div>`
     })
+}
+
+async function getDesert() {
+  desData = await getAllDesert()
+  console.log(data);
+  printDesert()
+  
+}
+getDesert()
+
+function printDesert() {
+  desData.forEach(element => {
+      document.getElementById('desertlar').innerHTML += `
+                  <div id="${element.id}" class="bg-white shadow rounded p-3 w-72 h-[450px] border-2 border-gray-200 flex flex-col justify-between items-center">
+                      <img src="${element.img}" alt="${element.name}" class="w-full h-50 object-cover mb-2 rounded">
+                      <h3 class="font-semibold text-[24px] text-center">${element.title}</h3>
+                      <p class="text-gray-600 text-[16px] mb-2 text-center">${element.composition}</p>
+                      <span class="text-black font-semibold text-center text-[18px]">${element.price} ₼</span>
+                      <div class="flex">
+                      <button  onclick="handleDelete('${element.id}')" type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 deleteBtn">Delete</button>
+                      <button onclick="showInps('${element.id}')" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit</button>
+                      </div>
+                  </div>`
+  });
 }
 
 
